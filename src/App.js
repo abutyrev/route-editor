@@ -3,6 +3,14 @@ import Input from "./components/presentational/Input";
 import RouteList from "./components/presentational/RouteList";
 import Map from "./components/presentational/Map";
 
+const reorder = (list, startIndex, endIndex) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
+};
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,15 +43,34 @@ class App extends Component {
     });
   };
 
+  onDragEnd = result => {
+    if (!result.destination) {
+      return;
+    }
+
+    const routes = reorder(
+      this.state.routes,
+      result.source.index,
+      result.destination.index
+    );
+
+    this.setState({
+      routes
+    });
+  };
+
   render() {
     return (
       <div className="App row">
         <div className="UserField col s4">
           <Input addRoute={this.addRoute} />
-          <RouteList
-            routes={this.state.routes}
-            deleteRoute={this.deleteRoute}
-          />
+          {this.state.routes.length ? (
+            <RouteList
+              routes={this.state.routes}
+              deleteRoute={this.deleteRoute}
+              onDragEnd={this.onDragEnd}
+            />
+          ) : null}
         </div>
         <div className="MapField col s8">
           <Map />

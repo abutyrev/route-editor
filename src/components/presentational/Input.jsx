@@ -12,13 +12,13 @@ class Input extends Component {
     this.setState({
       value: e.target.value
     });
-    console.log(this.state.value);
   };
+
   submitHandler = e => {
     e.preventDefault();
     this.props.addRoute(this.state.value);
     this.setState({
-      value: ''
+      value: ""
     });
   };
 
