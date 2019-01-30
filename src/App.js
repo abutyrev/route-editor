@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Input from "./components/presentational/Input";
 import RouteList from "./components/presentational/RouteList";
-import Map from "./components/presentational/Map";
+import MapContainer from "./components/container/MapContainer";
 
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
@@ -73,7 +73,7 @@ class App extends Component {
           ) : null}
         </div>
         <div className="MapField col s8">
-          <Map />
+          <MapContainer />
         </div>
       </div>
     );
