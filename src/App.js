@@ -73,7 +73,7 @@ class App extends Component {
           ) : null}
         </div>
         <div className="MapField col s8">
-          <MapContainer />
+          <MapContainer routes={this.state.routes}/>
         </div>
       </div>
     );

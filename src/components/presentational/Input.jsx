@@ -16,7 +16,16 @@ class Input extends Component {
 
   submitHandler = e => {
     e.preventDefault();
-    this.props.addRoute(this.state.value);
+    const geocoder = window.ymaps.geocode(this.state.value, {
+      results: 1
+    });
+    geocoder.then(res => {
+      let firstGeoObject = res.geoObjects.get(0),
+        coords = firstGeoObject.geometry.getCoordinates(),
+        address = firstGeoObject.getAddressLine();
+
+      this.props.addRoute({coords, address});
+    });
     this.setState({
       value: ""
     });
