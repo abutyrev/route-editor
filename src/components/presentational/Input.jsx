@@ -24,7 +24,7 @@ class Input extends Component {
         coords = firstGeoObject.geometry.getCoordinates(),
         address = firstGeoObject.getAddressLine();
 
-      this.props.addRoute({coords, address});
+      this.props.addPoint({coords, address});
     });
     this.setState({
       value: ""
@@ -37,12 +37,12 @@ class Input extends Component {
         <div className="input-field col s12">
           <input
             type="text"
-            id="new_route"
+            id="new_point"
             className="validate"
             value={this.state.value}
             onChange={this.changeHandler}
           />
-          <label htmlFor="new_route">Новая точка маршрута</label>
+          <label htmlFor="new_point">Новая точка маршрута</label>
         </div>
       </form>
     );

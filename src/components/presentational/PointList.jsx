@@ -1,10 +1,10 @@
 import React from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
-const RouteList = ({ routes, deleteRoute, onDragEnd }) => {
-  const list = routes.map((route, index) => {
+const PointList = ({ points, deletePoint, onDragEnd }) => {
+  const list = points.map((point, index) => {
     return (
-      <Draggable key={route.id} draggableId={route.id} index={index}>
+      <Draggable key={point.id} draggableId={point.id} index={index}>
         {provided => (
           <div
             className="collection-item"
@@ -17,7 +17,7 @@ const RouteList = ({ routes, deleteRoute, onDragEnd }) => {
               <a
                 href="#!"
                 className="secondary-content"
-                onClick={deleteRoute.bind(null, route.id)}
+                onClick={deletePoint.bind(null, point.id)}
               >
                 <i className="material-icons">delete</i>
               </a>
@@ -41,4 +41,4 @@ const RouteList = ({ routes, deleteRoute, onDragEnd }) => {
   );
 };
 
-export default RouteList;
+export default PointList;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Input from "./components/presentational/Input";
-import RouteList from "./components/presentational/RouteList";
+import PointList from "./components/presentational/PointList";
 import MapContainer from "./components/container/MapContainer";
 
 const reorder = (list, startIndex, endIndex) => {
@@ -15,7 +15,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      routes: []
+      points: []
     };
     this.id = 0;
   }
@@ -25,21 +25,38 @@ class App extends Component {
     return this.id;
   };
 
-  addRoute = route => {
-    const routes = this.state.routes.slice(),
+  addPoint = point => {
+    const points = this.state.points.slice(),
       id = this.generateId();
 
     this.setState({
-      routes: [...routes, { id, route }]
+      points: [...points, { id, point }]
     });
   };
 
-  deleteRoute = id => {
-    const routes = this.state.routes.filter(route => {
-      return route.id !== id;
+  updatePoint = (id, point) => {
+    const points = this.state.points.slice();
+    const index = points.findIndex(point => {
+      if (point.id === id) return true;
+      return false;
+    });
+
+    if (index !== -1) {
+      points[index].point = point;
+      this.setState({
+        points
+      });
+    } else {
+      throw new Error("no id found");
+    }
+  };
+
+  deletePoint = id => {
+    const points = this.state.points.filter(point => {
+      return point.id !== id;
     });
     this.setState({
-      routes
+      points
     });
   };
 
@@ -48,14 +65,14 @@ class App extends Component {
       return;
     }
 
-    const routes = reorder(
-      this.state.routes,
+    const points = reorder(
+      this.state.points,
       result.source.index,
       result.destination.index
     );
 
     this.setState({
-      routes
+      points
     });
   };
 
@@ -63,17 +80,17 @@ class App extends Component {
     return (
       <div className="App row">
         <div className="UserField col s4">
-          <Input addRoute={this.addRoute} />
-          {this.state.routes.length ? (
-            <RouteList
-              routes={this.state.routes}
-              deleteRoute={this.deleteRoute}
+          <Input addPoint={this.addPoint} />
+          {this.state.points.length ? (
+            <PointList
+              points={this.state.points}
+              deletePoint={this.deletePoint}
               onDragEnd={this.onDragEnd}
             />
           ) : null}
         </div>
         <div className="MapField col s8">
-          <MapContainer routes={this.state.routes}/>
+          <MapContainer points={this.state.points} updatePoint={this.updatePoint}/>
         </div>
       </div>
     );
