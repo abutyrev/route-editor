@@ -4,7 +4,8 @@ class Input extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ""
+      value: "",
+      invalidInput: false
     };
   }
 
@@ -23,8 +24,11 @@ class Input extends Component {
       let firstGeoObject = res.geoObjects.get(0),
         coords = firstGeoObject.geometry.getCoordinates(),
         address = firstGeoObject.getAddressLine();
-
-      this.props.addPoint({coords, address});
+      this.props.addPoint({ coords, address });
+    }).catch(err => {
+      this.setState({
+        invalidInput: true
+      });
     });
     this.setState({
       value: ""
@@ -38,7 +42,7 @@ class Input extends Component {
           <input
             type="text"
             id="new_point"
-            className="validate"
+            className={this.state.invalidInput ? "invalid validate" : "validate"}
             value={this.state.value}
             onChange={this.changeHandler}
           />
