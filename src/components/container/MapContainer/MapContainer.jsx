@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Map from "../presentational/Map";
+import Map from "../../presentational/Map/Map";
 
 class MapContainer extends Component {
   constructor(props) {

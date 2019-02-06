@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Input from "./components/presentational/Input";
-import PointList from "./components/presentational/PointList";
-import MapContainer from "./components/container/MapContainer";
+import Input from "./components/presentational/Input/Input";
+import PointList from "./components/presentational/PointList/PointList";
+import MapContainer from "./components/container/MapContainer/MapContainer";
 
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
