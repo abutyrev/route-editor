@@ -20,22 +20,24 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div
-          className="UserField col s4"
+          className="UserField"
         >
           <Input
             addPoint={[Function]}
+            isMapReady={false}
           />
         </div>,
         <div
-          className="MapField col s8"
+          className="MapField"
         >
           <MapContainer
+            mapReadyCallback={[Function]}
             points={Array []}
             updatePoint={[Function]}
           />
         </div>,
       ],
-      "className": "App row",
+      "className": "App",
     },
     "ref": null,
     "rendered": Array [
@@ -47,10 +49,11 @@ ShallowWrapper {
           "children": Array [
             <Input
               addPoint={[Function]}
+              isMapReady={false}
             />,
             null,
           ],
-          "className": "UserField col s4",
+          "className": "UserField",
         },
         "ref": null,
         "rendered": Array [
@@ -60,6 +63,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "addPoint": [Function],
+              "isMapReady": false,
             },
             "ref": null,
             "rendered": null,
@@ -75,10 +79,11 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <MapContainer
+            mapReadyCallback={[Function]}
             points={Array []}
             updatePoint={[Function]}
           />,
-          "className": "MapField col s8",
+          "className": "MapField",
         },
         "ref": null,
         "rendered": Object {
@@ -86,6 +91,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "mapReadyCallback": [Function],
             "points": Array [],
             "updatePoint": [Function],
           },
@@ -106,22 +112,24 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div
-            className="UserField col s4"
+            className="UserField"
           >
             <Input
               addPoint={[Function]}
+              isMapReady={false}
             />
           </div>,
           <div
-            className="MapField col s8"
+            className="MapField"
           >
             <MapContainer
+              mapReadyCallback={[Function]}
               points={Array []}
               updatePoint={[Function]}
             />
           </div>,
         ],
-        "className": "App row",
+        "className": "App",
       },
       "ref": null,
       "rendered": Array [
@@ -133,10 +141,11 @@ ShallowWrapper {
             "children": Array [
               <Input
                 addPoint={[Function]}
+                isMapReady={false}
               />,
               null,
             ],
-            "className": "UserField col s4",
+            "className": "UserField",
           },
           "ref": null,
           "rendered": Array [
@@ -146,6 +155,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "addPoint": [Function],
+                "isMapReady": false,
               },
               "ref": null,
               "rendered": null,
@@ -161,10 +171,11 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <MapContainer
+              mapReadyCallback={[Function]}
               points={Array []}
               updatePoint={[Function]}
             />,
-            "className": "MapField col s8",
+            "className": "MapField",
           },
           "ref": null,
           "rendered": Object {
@@ -172,6 +183,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "mapReadyCallback": [Function],
               "points": Array [],
               "updatePoint": [Function],
             },

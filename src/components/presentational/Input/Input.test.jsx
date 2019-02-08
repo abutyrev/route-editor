@@ -50,9 +50,20 @@ describe("Input component tests", () => {
     const testState = {
       value: '',
       invalidInput: true,
+      isMapReady: true
     },
     inputComponent = shallow(<Input />);
     inputComponent.setState(testState);
     expect(inputComponent.find('input').hasClass('invalid')).toEqual(true);
+  });
+
+  it('should have disabled attribute while map not ready', () => {
+    const testProps = {
+      value: '',
+      invalidInput: false,
+      isMapReady: false
+    },
+    inputComponent = mount(<Input {...testProps}/>);
+  expect(inputComponent.find('input').getDOMNode().disabled).toEqual(true);
   });
 });

@@ -19,10 +19,11 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <div
-        className="input-field col s12"
+        className="input-field"
       >
         <input
           className="validate"
+          disabled={true}
           id="new_point"
           onChange={[Function]}
           type="text"
@@ -34,7 +35,7 @@ ShallowWrapper {
           Новая точка маршрута
         </label>
       </div>,
-      "className": "col s12",
+      "className": "input-form",
       "onSubmit": [Function],
     },
     "ref": null,
@@ -46,6 +47,7 @@ ShallowWrapper {
         "children": Array [
           <input
             className="validate"
+            disabled={true}
             id="new_point"
             onChange={[Function]}
             type="text"
@@ -57,7 +59,7 @@ ShallowWrapper {
             Новая точка маршрута
           </label>,
         ],
-        "className": "input-field col s12",
+        "className": "input-field",
       },
       "ref": null,
       "rendered": Array [
@@ -67,6 +69,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "className": "validate",
+            "disabled": true,
             "id": "new_point",
             "onChange": [Function],
             "type": "text",
@@ -100,10 +103,11 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <div
-          className="input-field col s12"
+          className="input-field"
         >
           <input
             className="validate"
+            disabled={true}
             id="new_point"
             onChange={[Function]}
             type="text"
@@ -115,7 +119,7 @@ ShallowWrapper {
             Новая точка маршрута
           </label>
         </div>,
-        "className": "col s12",
+        "className": "input-form",
         "onSubmit": [Function],
       },
       "ref": null,
@@ -127,6 +131,7 @@ ShallowWrapper {
           "children": Array [
             <input
               className="validate"
+              disabled={true}
               id="new_point"
               onChange={[Function]}
               type="text"
@@ -138,7 +143,7 @@ ShallowWrapper {
               Новая точка маршрута
             </label>,
           ],
-          "className": "input-field col s12",
+          "className": "input-field",
         },
         "ref": null,
         "rendered": Array [
@@ -148,6 +153,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "className": "validate",
+              "disabled": true,
               "id": "new_point",
               "onChange": [Function],
               "type": "text",

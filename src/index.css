@@ -23,6 +23,23 @@ code {
   height: 100%;
 }
 
+.App {
+  display: flex;
+}
+.MapField {
+  width: 70%;
+  min-width: 400px;
+}
+.UserField {
+  width: 30%;
+  min-width: 210px;
+}
+.input-form,
+.point-list
+{
+  margin: 10px;
+}
+
 #map {
   border: 1px solid #e0e0e0;
   box-sizing: border-box;

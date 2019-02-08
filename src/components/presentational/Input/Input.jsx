@@ -37,14 +37,15 @@ class Input extends Component {
 
   render() {
     return (
-      <form className="col s12" onSubmit={this.submitHandler}>
-        <div className="input-field col s12">
+      <form className="input-form" onSubmit={this.submitHandler}>
+        <div className="input-field">
           <input
             type="text"
             id="new_point"
             className={this.state.invalidInput ? "invalid validate" : "validate"}
             value={this.state.value}
             onChange={this.changeHandler}
+            disabled = {!this.props.isMapReady}
           />
           <label htmlFor="new_point">Новая точка маршрута</label>
         </div>

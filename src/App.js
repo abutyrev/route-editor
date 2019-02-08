@@ -15,7 +15,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      points: []
+      points: [],
+      isMapReady: false
     };
     this.id = 0;
   }
@@ -76,11 +77,17 @@ class App extends Component {
     });
   };
 
+  mapReadyCallback = () => {
+    this.setState({
+      isMapReady: true
+    })
+  }
+
   render() {
     return (
-      <div className="App row">
-        <div className="UserField col s4">
-          <Input addPoint={this.addPoint} />
+      <div className="App">
+        <div className="UserField">
+          <Input addPoint={this.addPoint} isMapReady={this.state.isMapReady}/>
           {this.state.points.length ? (
             <PointList
               points={this.state.points}
@@ -89,8 +96,8 @@ class App extends Component {
             />
           ) : null}
         </div>
-        <div className="MapField col s8">
-          <MapContainer points={this.state.points} updatePoint={this.updatePoint}/>
+        <div className="MapField">
+          <MapContainer points={this.state.points} updatePoint={this.updatePoint} mapReadyCallback={this.mapReadyCallback}/>
         </div>
       </div>
     );

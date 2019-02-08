@@ -39,6 +39,7 @@ class MapContainer extends Component {
     this.linesCollection = new window.ymaps.GeoObjectCollection(null, {});
 
     this.yMap.geoObjects.add(this.pointsCollection).add(this.linesCollection);
+    this.props.mapReadyCallback();
   };
 
   onDrag = (linesInfo, e) => {

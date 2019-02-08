@@ -32,7 +32,7 @@ const PointList = ({ points, deletePoint, onDragEnd }) => {
     <DragDropContext onDragEnd={onDragEnd}>
       <Droppable droppableId="droppable">
         {provided => (
-          <div ref={provided.innerRef} className="collection">
+          <div ref={provided.innerRef} className="point-list collection">
             {list}
           </div>
         )}
