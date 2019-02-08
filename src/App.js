@@ -80,14 +80,14 @@ class App extends Component {
   mapReadyCallback = () => {
     this.setState({
       isMapReady: true
-    })
-  }
+    });
+  };
 
   render() {
     return (
       <div className="App">
         <div className="UserField">
-          <Input addPoint={this.addPoint} isMapReady={this.state.isMapReady}/>
+          <Input addPoint={this.addPoint} isMapReady={this.state.isMapReady} />
           {this.state.points.length ? (
             <PointList
               points={this.state.points}
@@ -97,7 +97,11 @@ class App extends Component {
           ) : null}
         </div>
         <div className="MapField">
-          <MapContainer points={this.state.points} updatePoint={this.updatePoint} mapReadyCallback={this.mapReadyCallback}/>
+          <MapContainer
+            points={this.state.points}
+            updatePoint={this.updatePoint}
+            mapReadyCallback={this.mapReadyCallback}
+          />
         </div>
       </div>
     );

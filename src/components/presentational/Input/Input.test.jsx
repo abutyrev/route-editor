@@ -28,7 +28,7 @@ describe("Input component tests", () => {
     expect(inputComponent.state().value).toEqual("aaa");
   });
 
-/*   it("check onSubmit callback", () => {
+  /*   it("check onSubmit callback", () => {
     const state = {
       value: 'Петрозаводск',
       invalidInput: false
@@ -46,24 +46,24 @@ describe("Input component tests", () => {
     expect(inputComponent.submitHandler).toHaveBeenCalledTimes(1);
   }); */
 
-  it('should have error class in error issue', () => {
+  it("should have error class in error issue", () => {
     const testState = {
-      value: '',
-      invalidInput: true,
-      isMapReady: true
-    },
-    inputComponent = shallow(<Input />);
+        value: "",
+        invalidInput: true,
+        isMapReady: true
+      },
+      inputComponent = shallow(<Input />);
     inputComponent.setState(testState);
-    expect(inputComponent.find('input').hasClass('invalid')).toEqual(true);
+    expect(inputComponent.find("input").hasClass("invalid")).toEqual(true);
   });
 
-  it('should have disabled attribute while map not ready', () => {
+  it("should have disabled attribute while map not ready", () => {
     const testProps = {
-      value: '',
-      invalidInput: false,
-      isMapReady: false
-    },
-    inputComponent = mount(<Input {...testProps}/>);
-  expect(inputComponent.find('input').getDOMNode().disabled).toEqual(true);
+        value: "",
+        invalidInput: false,
+        isMapReady: false
+      },
+      inputComponent = mount(<Input {...testProps} />);
+    expect(inputComponent.find("input").getDOMNode().disabled).toEqual(true);
   });
 });

@@ -53,7 +53,7 @@ describe("PointList component tests", () => {
     expect(deletePoint).toHaveBeenCalledTimes(1);
   });
 
-/*   it("check onDragEnd callback", () => {
+  /*   it("check onDragEnd callback", () => {
     const testProps = {
         points: [
           {

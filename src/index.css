@@ -18,8 +18,7 @@ code {
 .App,
 .UserField,
 .MapField,
-#Map
-{
+#Map {
   height: 100%;
 }
 
@@ -35,8 +34,7 @@ code {
   min-width: 210px;
 }
 .input-form,
-.point-list
-{
+.point-list {
   margin: 10px;
 }
 
