@@ -22,7 +22,9 @@ describe("PointList component tests", () => {
         points: [
           {
             id: 1,
-            point: null
+            point: {
+              name: '1'
+            }
           }
         ],
         deletePoint,
@@ -33,7 +35,7 @@ describe("PointList component tests", () => {
       PointListComponent.find(".collection-item")
         .find("span")
         .text()
-    ).toEqual("Точка маршрута 1delete");
+    ).toEqual("1. 1delete");
   });
 
   it("check deletePoint callback", () => {
@@ -41,7 +43,9 @@ describe("PointList component tests", () => {
         points: [
           {
             id: 1,
-            point: null
+            point: {
+              name: '1'
+            }
           }
         ],
         deletePoint,

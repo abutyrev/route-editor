@@ -25,14 +25,15 @@ ShallowWrapper {
           <Input
             addPoint={[Function]}
             isMapReady={false}
+            yMap={null}
           />
         </div>,
         <div
           className="MapField"
         >
           <MapContainer
-            mapReadyCallback={[Function]}
             points={Array []}
+            setMap={[Function]}
             updatePoint={[Function]}
           />
         </div>,
@@ -50,6 +51,7 @@ ShallowWrapper {
             <Input
               addPoint={[Function]}
               isMapReady={false}
+              yMap={null}
             />,
             null,
           ],
@@ -64,6 +66,7 @@ ShallowWrapper {
             "props": Object {
               "addPoint": [Function],
               "isMapReady": false,
+              "yMap": null,
             },
             "ref": null,
             "rendered": null,
@@ -79,8 +82,8 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <MapContainer
-            mapReadyCallback={[Function]}
             points={Array []}
+            setMap={[Function]}
             updatePoint={[Function]}
           />,
           "className": "MapField",
@@ -91,8 +94,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "mapReadyCallback": [Function],
             "points": Array [],
+            "setMap": [Function],
             "updatePoint": [Function],
           },
           "ref": null,
@@ -117,14 +120,15 @@ ShallowWrapper {
             <Input
               addPoint={[Function]}
               isMapReady={false}
+              yMap={null}
             />
           </div>,
           <div
             className="MapField"
           >
             <MapContainer
-              mapReadyCallback={[Function]}
               points={Array []}
+              setMap={[Function]}
               updatePoint={[Function]}
             />
           </div>,
@@ -142,6 +146,7 @@ ShallowWrapper {
               <Input
                 addPoint={[Function]}
                 isMapReady={false}
+                yMap={null}
               />,
               null,
             ],
@@ -156,6 +161,7 @@ ShallowWrapper {
               "props": Object {
                 "addPoint": [Function],
                 "isMapReady": false,
+                "yMap": null,
               },
               "ref": null,
               "rendered": null,
@@ -171,8 +177,8 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <MapContainer
-              mapReadyCallback={[Function]}
               points={Array []}
+              setMap={[Function]}
               updatePoint={[Function]}
             />,
             "className": "MapField",
@@ -183,8 +189,8 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "mapReadyCallback": [Function],
               "points": Array [],
+              "setMap": [Function],
               "updatePoint": [Function],
             },
             "ref": null,

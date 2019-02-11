@@ -39,7 +39,7 @@ class MapContainer extends Component {
     this.linesCollection = new window.ymaps.GeoObjectCollection(null, {});
 
     this.yMap.geoObjects.add(this.pointsCollection).add(this.linesCollection);
-    this.props.mapReadyCallback();
+    this.props.setMap(this.yMap);
   };
 
   onDrag = (linesInfo, e) => {
@@ -54,7 +54,7 @@ class MapContainer extends Component {
     }
   };
 
-  onDragEnd = (id, e) => {
+  onDragEnd = (id, name, e) => {
     let coords = e.get("target").geometry.getCoordinates();
     const geocoder = window.ymaps.geocode(coords, {
       results: 1
@@ -63,7 +63,7 @@ class MapContainer extends Component {
       let firstGeoObject = res.geoObjects.get(0),
         address = firstGeoObject.getAddressLine();
 
-      this.props.updatePoint(id, { coords, address });
+      this.props.updatePoint(id, { name, coords, address });
     });
   };
 
@@ -76,7 +76,10 @@ class MapContainer extends Component {
         },
         properties: {
           iconContent: `${index + 1}`,
-          balloonContent: point.point.address
+          balloonContent: `
+            название точки: ${point.point.name}, <br>
+            адресс: ${point.point.address}
+          `
         }
       });
 
@@ -118,7 +121,7 @@ class MapContainer extends Component {
         placemark.events.add("drag", this.onDrag.bind(null, null));
       }
 
-      placemark.events.add("dragend", this.onDragEnd.bind(null, point.id));
+      placemark.events.add("dragend", this.onDragEnd.bind(null, point.id, point.point.name));
 
       this.pointsCollection.add(placemark);
 

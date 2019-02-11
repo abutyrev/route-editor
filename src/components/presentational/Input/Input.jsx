@@ -17,24 +17,25 @@ class Input extends Component {
 
   submitHandler = e => {
     e.preventDefault();
-    const geocoder = window.ymaps.geocode(this.state.value, {
+    const coords = this.props.yMap.getCenter();
+    const geocoder = window.ymaps.geocode(coords, {
       results: 1
     });
     geocoder
       .then(res => {
         let firstGeoObject = res.geoObjects.get(0),
-          coords = firstGeoObject.geometry.getCoordinates(),
           address = firstGeoObject.getAddressLine();
-        this.props.addPoint({ coords, address });
+        this.props.addPoint({ name: this.state.value, coords, address });
+        
+        this.setState({
+          value: ""
+        });
       })
       .catch(err => {
         this.setState({
           invalidInput: true
         });
       });
-    this.setState({
-      value: ""
-    });
   };
 
   render() {

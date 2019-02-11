@@ -6,7 +6,8 @@ import App from "./App";
 describe("App component tests", () => {
   const initialState = {
     points: [],
-    isMapReady: false
+    isMapReady: false,
+    yMap: null
   };
   const AppComponent = shallow(<App />);
 

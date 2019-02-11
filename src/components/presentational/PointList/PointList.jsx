@@ -13,7 +13,7 @@ const PointList = ({ points, deletePoint, onDragEnd }) => {
             {...provided.dragHandleProps}
           >
             <span>
-              {`Точка маршрута ${index + 1}`}
+              {`${index + 1}. ${point.point.name}`}
               <a
                 href="#!"
                 className="secondary-content"
